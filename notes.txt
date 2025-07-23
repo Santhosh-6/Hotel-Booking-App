@@ -1,0 +1,23 @@
+<button onClick={() => {
+  localStorage.removeItem("bookings");
+  alert("Booking history cleared!");
+}}>
+  Clear Booking History
+</button>
+
+
+    const MAX_BOOKINGS= 100;
+    let bookings = JSON.parse(localStorage.getItem("bookings")) || [];
+    if (bookings.length >= MAX_BOOKINGS) {
+               bookings.shift(); 
+    }
+    bookings.push(formData);
+    localStorage.setItem("bookings", JSON.stringify(bookings));
+
+controller -> functions->use node    
+
+models -> thunderclient ->mango db
+
+routes -> get,put,push,delete use panna
+
+index.js -> routes setup like a react la app.jsx mari

@@ -1,0 +1,95 @@
+.conf .navbar{
+      background-color:  rgba(0, 0, 0, 0.4);
+}
+.conpage{
+   background-image: url("src/img/contat.png");
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+   color: white;
+}
+.con2 div{
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+}
+.con2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.con2 div p{
+    margin-top: 8px;
+    margin-bottom: 0px;
+    color: white;
+}
+.con2 div img{
+    width: 40px;
+    cursor: pointer;
+}
+.con1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.con1 h1{
+    color: rgb(30, 255, 0);
+    font-size: 50px;
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+.con1 p{
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+.con1 div{
+    width: 365px;
+    text-align: center;
+    margin-top: 75px;
+}
+.cf{
+    display: flex;
+    flex-direction: column;
+}
+.cf label{
+    margin-top: 2px;
+}
+.confom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.cform{
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px 22px;
+}
+.cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding-bottom: 70px;
+}
+.cfooter{
+    padding-top: 6px;
+    padding-bottom: 6px;
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.cfooter p{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+textarea{
+    background-color: rgba(0,0,0,0.2);
+    color: white;
+}

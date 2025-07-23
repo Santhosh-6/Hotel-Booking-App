@@ -1,0 +1,28 @@
+.single-t{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+}
+.t-btn{
+    padding: 15px;
+    cursor: pointer;
+    background: white;
+    border: 1px solid rgb(185, 185, 185);
+    border-radius: 8px;
+    transition: 0.2s;
+}
+.t-btn:hover{
+    background-color: #6d6d6d;
+}
+.t-btn.selected{
+    color: white;
+    background-color: #45b949;
+    border-color: #388e38;
+}
+.table-full h4{
+    margin-top: 0px;
+    margin-bottom: 8px;
+}
+.table-full{
+    margin-bottom: 8px;
+}

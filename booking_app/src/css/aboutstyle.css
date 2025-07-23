@@ -1,0 +1,56 @@
+.abpage .navbar{
+    background-color:  rgba(0, 0, 0, 0.705);
+}
+.abdiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 22px;
+    padding: 0px 40px;
+    padding-top: 100px;
+}
+.abdiv h1{
+    color: orange;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.ft1{
+    display: flex;
+    text-align: start;
+    align-items: start;
+    gap: 20px;
+    justify-content: center;
+}
+.ft1 h4{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    color:  rgb(238, 255, 0);
+}
+.ft1 p{
+    margin-bottom: 7px;
+    margin-top: 8px;
+}
+.ft2 p{
+    margin-bottom: 0px;
+}
+.abfooter{
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+}
+.abflex{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.out img{
+    width:400px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+.out img:hover{
+     transition: 0.3s ease-in-out;
+}

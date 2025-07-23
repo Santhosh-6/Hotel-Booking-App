@@ -1,0 +1,52 @@
+.main{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    background-image: url("src/img/confrimpic.png");
+    color: white;
+    background-size: cover;
+    width: 100%;
+}
+.tick{
+    width: 120px;
+}
+.m1{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.f1{
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 20px;
+    padding: 30px;
+    border-radius: 10px;
+    animation: slideDown 0.7s ease-out;
+}
+.f1 h1{
+    color:#02ffea;
+    font-size: 40px;
+}
+.f1 button{
+    font-size: 16px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: none;
+    margin-left: 8px;
+}
+.f1 p{
+    font-size: 18px;
+}
+@keyframes slideDown {
+    0%{
+        transform: translateY(-200px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
