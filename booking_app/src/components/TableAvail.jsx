@@ -1,19 +1,35 @@
-import React, { useEffect, useState } from 'react'
-import "../css/tablestyle.css"
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import "../css/tablestyle.css";
 
-function TableAvail({selectedDate,selectedTime,onSelectTable}) {
-  const allTables =[1,2,3,4,5,6,7,8,9,10];
-  
-  const [availableTable,setAvailableTable]=useState([]);
-  const [selectedTable,setSelectedTable] =useState(null);
+function TableAvail({ selectedDate, selectedTime, onSelectTable }) {
+  const allTables = [1,2,3,4,5,6,7,8,9,10];
 
-  useEffect(()=>{
-     const bookings=JSON.parse(localStorage.getItem("bookings"))||[];
-     const bookedTable=bookings.filter((b)=>b.date===selectedDate && b.time===selectedTime)
-                               .map((b)=>b.table);
-     const available=allTables.filter((t)=>!bookedTable.includes(t));
-     setAvailableTable(available);                         
-  },[selectedDate,selectedTime]);
+  const [availableTable, setAvailableTable] = useState([]);
+  const [selectedTable, setSelectedTable] = useState(null);
+
+  useEffect(() => {
+const fetchBookedTables = async () => {
+  try {
+    const res = await axios.get("http://localhost:7000/bookings", {
+      params: { date: selectedDate, time: selectedTime }
+    });
+
+    const data = Array.isArray(res.data) ? res.data : []; // 🔒 Safe fallback
+
+    const bookedTables = data.map((b) => b.table);
+    const available = allTables.filter((t) => !bookedTables.includes(t));
+    setAvailableTable(available);
+  } catch (err) {
+    console.error("Error fetching bookings:", err);
+    setAvailableTable([]);
+  }
+};
+
+    if (selectedDate && selectedTime) {
+      fetchBookedTables();
+    }
+  }, [selectedDate, selectedTime]);
 
    const handleClick=(table)=>{
     setSelectedTable(table);

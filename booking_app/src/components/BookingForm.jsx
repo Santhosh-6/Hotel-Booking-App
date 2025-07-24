@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import TableAvail from './TableAvail'
+import axios from "axios"
 import "../../src/css/bookstyle.css"
 
 function BookingForm() {
@@ -19,7 +20,7 @@ function BookingForm() {
     setFormData({...formData,[e.target.name]:e.target.value});
   };
 
-  const handleSubmit=(e)=>{
+   const handleSubmit = async (e) => {
     e.preventDefault();
 
     if(
@@ -30,10 +31,7 @@ function BookingForm() {
         return;
     }
 
-    const bookings=JSON.parse(localStorage.getItem("bookings"))||[];
-    bookings.push(formData);
-    localStorage.setItem("bookings",JSON.stringify(bookings));
- 
+    await axios.post("http://localhost:7000/bookings", formData);
     navigate("/success");
   };  
 
@@ -52,13 +50,13 @@ function BookingForm() {
       <input type="time" name='time' value={formData.time} onChange={handleChange}/><br/>
        </div>
        </div>
-      {formData.date && formData.time && (
-        <TableAvail 
-         selectedDate={formData.date}
-         selectedTime={formData.time}
-         onSelectTable={(table)=>setFormData({...formData,table})}
-        />
-      )}
+          {formData.date && formData.time && (
+            <TableAvail
+              selectedDate={formData.date}
+              selectedTime={formData.time}
+              onSelectTable={(table) => setFormData({ ...formData, table })}
+            />
+          )}
       <div className='ip'>
       <label>Name</label>
       <input  type="text" placeholder='enter your name' name='name' value={formData.name} onChange={handleChange}/><br/>
