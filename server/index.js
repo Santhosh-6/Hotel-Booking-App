@@ -15,7 +15,7 @@ app.use(express.json());
 
 // Connect to MongoDB Atlas
 mongoose.connect(
-  "mongodb+srv://admin:password@cluster0.qthh0na.mongodb.net/hotelBooking?retryWrites=true&w=majority&appName=Cluster0",
+  "mongodb+srv://admin:password@cluster0.name.mongodb.net/hotelBooking?retryWrites=true&w=majority&appName=Cluster0",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
