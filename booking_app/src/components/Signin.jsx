@@ -1,24 +1,25 @@
-import React, { useState } from 'react'
 import "../../src/css/signstyle.css"
 import { Link, useNavigate } from 'react-router-dom'
+import React, { useState } from 'react';
+import axios from 'axios';
 
 function Signin() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const [username,setUsername]=useState("");
-  const [password,setPassword]=useState("");
-
-  const handleLogin=()=>{
-    const users=JSON.parse(localStorage.getItem("users"))||[];
-    const foundUser=users.find((user)=>user.username===username && user.password === password);
-    if (foundUser){
-      localStorage.setItem("logInUser",JSON.stringify(foundUser));
-      alert("Login successfully!");
-      navigate("/");
-    }else{
-      alert("Invalid Credentials.")
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post('http://localhost:7000/api/signin', { username, password });
+      localStorage.setItem('token', res.data.token);
+      localStorage.setItem('user', res.data.name);
+      alert('Login successful!');
+      navigate('/booking');
+    } catch (err) {
+      alert('Invalid credentials');
     }
-  }
+  };
 
   return (
     <div className='bd'>
@@ -34,7 +35,6 @@ function Signin() {
        </div>
         <div className='flx1'>
        <p > <Link to={"/signup"} className='sig'>Don't have an account?</Link></p>
-        <p>Forget Password?</p>
         </div>
        </form>
     </div>

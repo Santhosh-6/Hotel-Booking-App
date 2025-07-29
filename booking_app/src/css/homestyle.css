@@ -3,7 +3,7 @@ body{
   margin: 0px;
 }
 .inner1{
-    background-image: url("src/img/ChatGPT Image Jul 11, 2025, 04_01_44 PM.png");
+    background-image: url("/img/ChatGPT Image Jul 11, 2025, 04_01_44 PM.png");
     background-size: cover;
     background-position: center;
     position: relative;
@@ -141,4 +141,159 @@ ul a{
   border-radius: 4px;
   font-weight: bold;
   cursor: pointer;
+}
+.non{
+ display: none;
+}
+
+@media screen and (max-width: 600px) and (min-width: 555px){
+  .inner1 {
+    height: 350px;
+  }
+
+  .inner2 h1 {
+    font-size: 36px;
+  }
+
+  .inner2 p {
+    font-size: 18px;
+  }
+
+  .dish-cards {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .c {
+    width: 180px;
+  }
+  
+  .s img{
+    height: 120px;
+  }
+
+  .nav ul {
+    gap: 20px;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width:554px) and (min-width:391px){
+ .nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+    background: rgba(0,0,0,0.85);
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .sp {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .logo {
+    font-size: 16px;
+    margin: 10px 0 0 5px;
+  }
+.un{
+    position:absolute;
+    right: 50px;
+    top: 5px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .inner1 {
+    height: 300px;
+    padding: 10px;
+  }
+
+  .inner2 {
+    padding: 20px;
+  }
+
+  .inner2 h1 {
+    font-size: 28px;
+  }
+
+  .inner2 p {
+    font-size: 16px;
+  }
+
+  .inner2 button {
+    font-size: 14px;
+    padding: 5px 10px;
+  }
+
+  .dish-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .c {
+    width: 90%;
+    max-width: 300px;
+  }
+  
+  .s img{
+    height: 210px;
+  }
+
+  .intro, .reviews, .dishes {
+    padding: 15px 20px;
+  }
+
+  .nav ul {
+    display: grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    background: rgba(0,0,0,0.85);
+    padding: 10px;
+    margin: 0;
+    padding-right: 19px;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar {
+    position: relative;
+  }
+
+  .sp {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .logo {
+    font-size: 16px;
+    margin: 10px 0 0 5px;
+  }
+  .un{
+    position:absolute;
+    right: 50px;
+    top: 5px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 10px;
+  }
+  .inss{
+    padding: 0 8.9px;
+  }
 }

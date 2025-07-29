@@ -2,12 +2,14 @@
       background-color:  rgba(0, 0, 0, 0.4);
 }
 .conpage{
-   background-image: url("src/img/contat.png");
+   background-image: url("/img/contat.png");
    background-position: center;
    background-size: cover;
    background-repeat: no-repeat;
    color: white;
-   height: 100vh;
+    display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 .con2 div{
     text-align: center;
@@ -38,6 +40,7 @@
     align-items: center;
     flex-direction: column;
     padding-top: 10px;
+    flex: 1;
 }
 .con1 h1{
     color: rgb(30, 255, 0);
@@ -79,12 +82,11 @@
     gap: 30px;
     padding-bottom: 70px;
 }
-.cfooter{
-    padding-top: 6px;
-    padding-bottom: 6px;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
+.cfooter {
+  text-align: center;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
 }
 .cfooter p{
     margin-top: 0px;
@@ -93,4 +95,105 @@
 textarea{
     background-color: rgba(0,0,0,0.2);
     color: white;
+}
+@keyframes fadeSlideIn {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.con2 div,
+.cform {
+  animation: fadeSlideIn 0.6s ease-in-out;
+}
+
+@media screen and (max-width: 600px) and (min-width: 391px) {
+  .con1 h1 {
+    font-size: 36px;
+  }
+
+  .con1 p {
+    font-size: 16px;
+  }
+
+  .cform {
+    width: 90%;
+  }
+
+  .cont {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .con2 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .con2 div {
+    width: 45%;
+  }
+
+  .con1 div {
+    margin-top: 50px;
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .conpage {
+    background-position: top;
+    padding: 10px;
+  }
+
+  .con1 h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .con1 p {
+    font-size: 14px;
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  .con1 div {
+    width: 90%;
+    margin-top: 30px;
+  }
+
+  .con2 {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .con2 div {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .con2 div img {
+    width: 30px;
+  }
+
+  .cont {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px 80px;
+  }
+
+  .confom {
+    margin-top: 10px;
+  }
+
+  .cform {
+    width: 100%;
+    padding: 15px;
+  }
 }

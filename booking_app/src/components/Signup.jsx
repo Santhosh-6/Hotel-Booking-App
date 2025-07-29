@@ -1,24 +1,22 @@
 import React, { useState } from 'react';
 import "../../src/css/signstyle.css";
 import { Link, useNavigate } from 'react-router-dom'
+import axios from 'axios';
 
 function Signup() {
-   const navigate=useNavigate();
+  const navigate = useNavigate();
+  const [form, setForm] = useState({ name: '', email: '', username: '', password: '' });
 
-   const [form,setForm]=useState({
-    name:"",
-    email:"",
-    username:"",
-    password:"",
-   });
-   const handleSignup=()=>{
-    const users=JSON.parse(localStorage.getItem("users"))||[];
-    users.push(form);
-    localStorage.setItem("users",JSON.stringify(users));
-    alert("Account Created Successfully");
-    navigate("/signIn");
-   }
-
+  const handleSignup = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post('http://localhost:7000/api/signup', form);
+      alert('Account Created Successfully');
+      navigate('/signin');
+    } catch (err) {
+      alert('Signup failed or user already exists');
+    }
+  };
   return (
     <div className="bd">
       <div className="ful up1">
@@ -42,8 +40,7 @@ function Signup() {
           </div>
 
           <div className="flx1">
-            <p>Already have an account?</p>
-            <p><Link to={"/signin"} className='sig'>Go to Login</Link></p>
+            <p><Link to={"/signin"} className='sig'>Already have an account?</Link></p>
           </div>
         </form>
       </div>

@@ -32,6 +32,9 @@ function Service() {
             </div>
         </div>
       </div>
+              <footer className='cfooter'>
+       <p>&copy:@2025 Chic Inn. All Rights Reserved.</p>
+    </footer>
     </body>
   )
 }

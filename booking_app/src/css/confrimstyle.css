@@ -2,10 +2,9 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-top: 0px;
     margin-bottom: 0px;
-    background-image: url("src/img/confrimpic.png");
+    background-image: url("/img/confrimpic.png");
     color: white;
     background-size: cover;
-    width: 100%;
 }
 .tick{
     width: 120px;
@@ -49,4 +48,20 @@
         opacity: 1;
     }
 }
-
+@media screen and (max-width: 600px) and (min-width: 391px) {
+       .f1{
+        width: 70%;
+    } 
+}
+@media screen and (max-width: 390px) {
+    .f1{
+        width: 60%;
+    }
+    .f1 button{
+        margin-top: 10px;
+    }
+    .f1,.m1{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}

@@ -1,5 +1,5 @@
 .bd{
-    background-image: url("src/img/login (1).png");
+    background-image: url("/img/login (1).png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -59,4 +59,14 @@
 }
 .up{
     height: 450px;
+}
+@media screen and (max-width: 600px) and (min-width: 391px) {
+    .s1{
+        width: 300px;
+    }
+}
+@media screen and (max-width: 390px) {
+ .s1{
+    width: 250px;
+ }   
 }

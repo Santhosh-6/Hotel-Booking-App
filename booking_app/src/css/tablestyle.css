@@ -26,3 +26,33 @@
 .table-full{
     margin-bottom: 8px;
 }
+
+@media screen and (max-width: 504px) and (min-width: 391px) {
+    .single-t {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .t-btn {
+    padding: 14px;
+    font-size: 15px;
+  }
+  .table-full {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .single-t {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .t-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .table-full {
+    padding: 10px;
+  }
+}

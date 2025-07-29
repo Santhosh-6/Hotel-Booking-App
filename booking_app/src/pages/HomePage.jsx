@@ -6,14 +6,14 @@ import { useNavigate } from 'react-router-dom'
 function HomePage() {
    const navigate =useNavigate();
 
-   const handleBookTable=() =>{
-    const user = localStorage.getItem("logInUser");
-    if(!user){
-      navigate("/signIn");
-    }else{
-      navigate("/booking");
-    }
-   };
+const handleBookTable = () => {
+  const token = localStorage.getItem("token");
+  if (token) {
+    navigate("/booking");
+  } else {
+    navigate("/signin");
+  }
+};
   return (
     <>
     <Navbar />
@@ -34,9 +34,9 @@ function HomePage() {
       <div className="dishes">
         <h2>Our Featured Dishes</h2>
         <div className="dish-cards">
-          <div className="c"><img src="src\img\grilled-chicken-horizontal-1532030541.jpg" alt="pic1" /><p>Grilled Chicken</p></div>
-          <div className="c s"><img src="src\img\creamy-italian-sausage-pasta-recipe-snippet-3.jpg" alt="pic2" /><p>Italian Pasta</p></div>
-          <div className="c"><img src="src\img\12332071-2013-signature-plated-dessert-competition.jpg" alt="pic3" /><p>Signature Dessert</p></div>
+          <div className="c"><img src="/img/grilled-chicken-horizontal-1532030541.jpg" alt="pic1" /><p>Grilled Chicken</p></div>
+          <div className="c s"><img src="/img/creamy-italian-sausage-pasta-recipe-snippet-3.jpg" alt="pic2" /><p>Italian Pasta</p></div>
+          <div className="c"><img src="/img/12332071-2013-signature-plated-dessert-competition.jpg" alt="pic3" /><p>Signature Dessert</p></div>
         </div>
       </div>
 

@@ -5,38 +5,38 @@
    display: grid;
    grid-template-columns: 1fr 1fr;
    grid-template-rows: 1fr 1fr;
-   width: 100vw;
    height: 100vh;
    color: rgb(235, 255, 60);
+   overflow: hidden;
 }
 .sd1{
-    background-image: url("src/img/dining-modified.png");
+    background-image: url("/img/dining-modified.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .sd2{
-    background-image: url("src/img/event-modified.png");
+    background-image: url("/img/event-modified.png");
         background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .sd3{
-    background-image: url("src/img/wifi-modified.png");
+    background-image: url("/img/wifi-modified.png");
         background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .sd4{
-    background-image: url("src/img/trans-modified.png");
+    background-image: url("/img/trans-modified.png");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    border-bottom-right-radius: 10px;
 }
-.sdev{
-    text-align: center;
-    margin-top: 100px;
+.sdev {
+  text-align: center;
+  margin-top: 100px;
+  animation: fadeSlideUp 1s ease forwards;
 }
 .sdev h2{
     font-size: 40px;
@@ -46,4 +46,24 @@
 .sdev p{
     color: white;
     font-size: 20px;
+}
+@keyframes fadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sd1:hover, .sd2:hover, .sd3:hover, .sd4:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+@media screen and (max-width: 390px) {
+ .sev1{
+    grid-template-columns: 1fr;
+    height: auto;
+ }   
 }

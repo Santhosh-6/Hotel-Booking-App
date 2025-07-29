@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Navbar from './Navbar'
 import "../../src/css/contactstyle.css"
+import axios from "axios";
 
 function Contact() {
   const [formm, setFormm] = useState({ name: "", email: "", message: "" });
@@ -9,21 +10,24 @@ function Contact() {
     setFormm({ ...formm, [e.target.name]: e.target.value });
   };
 
-  const handleSubmitt = (e) => {
-    e.preventDefault();
+const handleSubmitt = async (e) => {
+  e.preventDefault();
 
-    if (!formm.name || !formm.email || !formm.message) {
-      alert("Please fill out all fields.");
-      return;
-    }
+  if (!formm.name || !formm.email || !formm.message) {
+    alert("Please fill out all fields.");
+    return;
+  }
 
-    const messages = JSON.parse(localStorage.getItem("messages")) || [];
-    messages.push(formm);
-    localStorage.setItem("messages", JSON.stringify(messages));
-
+  try {
+    await axios.post("http://localhost:7000/api/contact", formm);
     alert("Thank you! Your message has been submitted.");
     setFormm({ name: "", email: "", message: "" });
-  };
+  } catch (error) {
+    console.error("Submission failed:", error);
+    alert("Failed to send message. Try again.");
+  }
+};
+
 
   return (
     <>
@@ -38,8 +42,8 @@ function Contact() {
     </div>
     <div className='cont'>
       <div className='con2'>
-        <div><a href="mailto:into@chicinn.com" target='_blank'><img src="src\img\email.png" alt="mail" /></a><p>into@chicinn.com</p></div>
-        <div><a href="tel:+001234567890"><img src="src\img\phone.png" alt="phn" /></a><p>+00 1234 567 890</p></div>
+        <div><a href="mailto:into@chicinn.com" target='_blank'><img src="/img/email.png" alt="mail" /></a><p>into@chicinn.com</p></div>
+        <div><a href="tel:+001234567890"><img src="/img/phone.png" alt="phn" /></a><p>+00 1234 567 890</p></div>
     </div>
     <div className='confom'>
     <form className='cform' onSubmit={handleSubmitt}>
@@ -61,10 +65,10 @@ function Contact() {
     </form>
     </div>
     </div>
-    <footer className='cfooter'>
+    </div>
+        <footer className='cfooter'>
        <p>&copy:@2025 Chic Inn. All Rights Reserved.</p>
     </footer>
-    </div>
     </div>
     </>
   )

@@ -15,7 +15,7 @@ function BookingForm() {
     time:"",
     table:null,
   });
-
+  
   const handleChange=(e)=>{
     setFormData({...formData,[e.target.name]:e.target.value});
   };
@@ -31,8 +31,14 @@ function BookingForm() {
         return;
     }
 
-    await axios.post("http://localhost:7000/bookings", formData);
-    navigate("/success");
+  try {
+    const response = await axios.post("http://localhost:7000/bookings", formData);
+    const bookingId = response.data._id;
+    navigate(`/success/${bookingId}`);
+  } catch (error) {
+    console.error("Booking failed:", error);
+    alert("Booking failed. Try again.");
+  }
   };  
 
   return (

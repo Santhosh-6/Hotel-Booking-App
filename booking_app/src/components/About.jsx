@@ -22,11 +22,12 @@ const About = () => {
         </p>
       </div>
       <div className='out'>
-        <img src="src/img/login (2).png" alt="picture" />
+        <img src="/img/login (2).png" alt="picture" />
       </div>
       </div>
       </div>
-      <footer className="abfooter">
+      <footer >
+        <div className="abfooter">
         <div className='ft1'><h4>Chic Inn</h4>
         <div>
           <p>123 Food Street, YourCity</p>
@@ -37,6 +38,7 @@ const About = () => {
         </div>
         <div className='ft2'>
           <p>&copy:@2025 Chic Inn. All Rights Reserved.</p>
+        </div>
         </div>
       </footer>
     </body>

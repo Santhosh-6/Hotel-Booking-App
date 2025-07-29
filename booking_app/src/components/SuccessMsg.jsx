@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
-import "../../src/css/confrimstyle.css"
+import React, { useEffect, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import axios from 'axios';
+import "../../src/css/confrimstyle.css";
 
 function SuccessMsg() {
+  const { id } = useParams(); 
   const [booking, setBooking] = useState(null);
 
   useEffect(() => {
-    const bookings = JSON.parse(localStorage.getItem("bookings")) || [];
-    const lastBooking = bookings[bookings.length - 1];
-    setBooking(lastBooking);
-  }, []);
+    const fetchBooking = async () => {
+      try {
+        const res = await axios.get(`http://localhost:7000/bookings/${id}`);
+        setBooking(res.data);
+      } catch (error) {
+        console.error("Error fetching booking:", error);
+      }
+    };
+
+    fetchBooking();
+  }, [id]);
 
   const handlePrint = () => {
     window.print();
@@ -21,7 +30,7 @@ function SuccessMsg() {
     <body className='main'>
       <div className='m1'>
       <div className='f1'>
-      <img className='tick' src="src\img\check.png" alt="tick" />
+      <img className='tick' src="/img/check.png" alt="tick" />
       <h1>Reservation Confrimed</h1>
       <p>Your reservation has been successfully made</p>
             <div className="receipt-box">

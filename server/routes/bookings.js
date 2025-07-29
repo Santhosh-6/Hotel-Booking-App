@@ -1,22 +1,18 @@
-// routes/bookings.js
-
 import express from "express";
 import Booking from "../models/Booking.js";
 
 const router = express.Router();
 
-// POST a new booking
 router.post("/", async (req, res) => {
   try {
     const booking = new Booking(req.body);
-    await booking.save();
-    res.status(201).json({ message: "Booking confirmed" });
+    const savedBooking = await booking.save();
+    res.status(201).json(savedBooking); 
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
 });
 
-// GET bookings by date & time
 router.get("/", async (req, res) => {
   const { date, time } = req.query;
   try {
