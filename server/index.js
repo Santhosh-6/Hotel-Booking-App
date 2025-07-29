@@ -9,7 +9,7 @@ app.use(cors({ origin: "http://localhost:5173" }));
 app.use(express.json());
 
 mongoose.connect(
-  "mongodb+srv://admin:santho222@cluster0.qthh0na.mongodb.net/hotelBooking?retryWrites=true&w=majority&appName=Cluster0",
+  "url",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
